@@ -1,0 +1,31 @@
+.header-img{
+	width: 100%;
+	height: auto;
+}
+.head-cont{
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-head{
+	opacity: 0.7;
+	background-color:#000000;
+}
+
+.bg-head .txt-head{
+	opacity: 0;
+}
+.onetwo:nth-child(even), .onetwo:nth-child(even) .jumbotron{
+	background-color: #e3f2fd
+}
+.onetwo:nth-child(odd), .onetwo:nth-child(odd) .jumbotron{
+	background-color: #FFFFFF
+}
