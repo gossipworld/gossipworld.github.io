@@ -1,3 +1,6 @@
+body{
+    font-family: 'Droid Serif', serif;
+}
 /* HEADER */
 .sticky {
     font-family: 'Playfair Display', serif;
@@ -85,10 +88,18 @@
 }
 
 .content, .jumbotron{
-    font-family: 'Droid Serif';
-    font-size: 14px;
+    font-size: 16px;
     color: #2f2f2f;
     background-color: #f9f7f1;
+}
+
+p{
+    font-family: 'Helvetica',;
+}
+
+.content a{
+    color: #2f2f2f;
+    text-decoration: underline;
 }
 
 .content {
@@ -153,8 +164,17 @@
 }
 
 /* Emphasis */
+.sources{
+    font-size: 14px;
+    text-align: left;
+}
+.sources p{
+    margin: 0;
+}
+.sources p + p{
+    padding-left: 20px;
+}
 .citation{
-    font-family: 'Playfair Display', serif;
     text-align: center;
     font-weight: 400;
     display: block;
