@@ -1,117 +1,110 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <title>GOSSIP WORLD</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/style.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
 
-  </head>
-  <body>
-    <div class="head-cont">
-      <img src="images/world.jpg" class="img-fluid header-img"  alt="Responsive image">
-      <div class="container centered bg-head">
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div class="sticky">
+    <div class="header">
+      <div class="newspaper">
+        <small>A datastory from applied data analysis - EPFL - Special edition</small>
+        <header>Gossip World</header>
+      </div>
+
+      <div class="subhead">
+        <a href="#introduction">Introduction</a>
+        <a href="#datacleaning">Data cleaning</a>
+        <a href="#exploration">Exploration</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <div class="article">
+        <span class="title">What does the world think of us ?</span>
         <p>
-          <h1> <strong> WHAT DOES THE WORLD THINK OF US? </strong></h1>
-          <p>EPFL - APPLIED DATA ANALYSIS PROJECT</p>
-          <small>Magali BAUMANN - Nathan GREFFE - Christophe MINUTOLO</small>
+          <span class="author">by Magali BAUMANN - Nathan GREFFE - Christophe MINUTOLO</span>
+        </p>
+      </div>
+      <figure class="figure">
+        <img class="media" src="images/world2.jpg" alt="">
+      </figure>
+      <div class="jumbotron chapter">
+        <div align="middle" class="title" id="introduction">Introduction</div>
+        <hr>
+        <div align="middle" class="text-justify">
+          <p>
+            <em>What’s the best thing about Switzerland? -- I don't know, but the flag is a big plus!</em> Joke aside, we want to highlight how one country is seen by other countries of the world. Is it seen positively or negatively ? Is this country even known from the others ? These questions are an example of what we want to answer.
+          </p>
+          <p>
+            To study the feeling of countries towards each other, we use the GDELT Project dataset :
+          </p>
+          <div class="citation">
+            "Supported by Google Jigsaw, the GDELT Project monitors the world's broadcast, print, and web news from nearly every corner of every country in over 100 languages and identifies the people, locations, organizations, themes, sources, emotions, counts, quotes, images and events driving our global society every second of every day, creating a free open platform for computing on the entire world."
+            <footer class="blockquote-footer">Find more in <cite title="Source Title"><a href="https://www.gdeltproject.org/">GDELT website</a></cite></footer>
+          </div>
+          <p>
+            More precisely, to answer our questions, we will exploit the tone of reported events to classify countries and display beautifuls graphics about their relations. We follow this plan in this presentation:
+          </p>
+          <ol>
+            <li>
+              Data cleaning
+            </li>
+            <li>
+              Choice of the statistics
+            </li>
+            <li>
+              A first beautiful graphic
+            </li>
+            <li>
+              A second one
+            </li>
+            <li>
+              A few more words to conclude
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="jumbotron chapter">
+        <div align="middle" class="title" id="datacleaning">Data cleaning</div>
+        <hr>
+        <div align="middle"  class="text-justify">
+          <!-- YOU CAN INSERT WHATEVER YOU WHANT HERE.-->
+          cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet
+        </div>
+      </div>
+      <div class="jumbotron chapter">
+        <div align="middle" class="title" id="exploration">EXPLORATION</div>
+        <hr>
+        <div align="middle">
+            <iframe class="media" height="600" allowtransparency="true" frameborder="0"scrolling="no" src="https://plot.ly/~christophe.minutolo/6.embed?link=false&modebar=false"></iframe>
+            <p class="figcaption">A beautiful map</p>
+
+        </div>
+        <p>
+          90,6% of the coutry have better image of them compared to the think of the other countries.
         </p>
       </div>
     </div>
-    <div class="onetwo">
-      <div class="container">
-        <div class="jumbotron">
-          <h1 align="middle">INTRODUCTION</h1>
-          <hr>
-          <div align="middle" class="text-justify">
-            <p>
-              <em>What’s the best thing about Switzerland? -- I don't know, but the flag is a big plus!</em> Joke aside, we want to highlight how one country is seen by other countries of the world. Is it seen positively or negatively ? Is this country even known from the others ? These questions are an example of what we want to answer.
-            </p>
-            <p>
-            To study the feeling of countries towards each other, we use the GDELT Project dataset :
-            </p>
-            <div class="card">
-              <div class="card-body">
-                <em class="mb-0">"Supported by Google Jigsaw, the GDELT Project monitors the world's broadcast, print, and web news from nearly every corner of every country in over 100 languages and identifies the people, locations, organizations, themes, sources, emotions, counts, quotes, images and events driving our global society every second of every day, creating a free open platform for computing on the entire world."
-                </em>
-                <footer class="blockquote-footer">Find more in <cite title="Source Title"><a href="https://www.gdeltproject.org/">GDELT website</a></cite></footer>
-              </div>
-            </div>
-            <br/>
-            <p>
-            More precisely, to answer our questions, we will exploit the tone of reported events to classify countries and display beautifuls graphics about their relations. We follow this plan in this presentation:
-            </p>
-            <ol>
-              <li>
-                Data cleaning
-              </li>
-              <li>
-                Choice of the statistics
-              </li>
-              <li>
-                A first beautiful graphic
-              </li>
-              <li>
-                A second one
-              </li>
-              <li>
-                A few more words to conclude
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="onetwo">
-      <div class="container">
-        <div class="jumbotron">
-          <h1 align="middle">DATA CLEANING</h1>
-          <hr>
-          <div align="middle">
-            <!-- YOU CAN INSERT WHATEVER YOU WHANT HERE.-->
-            cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="onetwo">
-      <div class="container">
-        <div class="jumbotron">
-          <h1 align="middle">EXPLORATION</h1>
-          <hr>
-          <div align="middle">
-            <iframe width="100%" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~christophe.minutolo/6.embed?link=false&modebar=false"></iframe>
+  </div>
 
-          </div>
-          <p>
-            90,6% of the coutry have better image of them compared to the think of the other countries.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- TO ADD A PART, JUST COPY AND PAST THE FOLLOWING CODE ABOVE
-    <div class="onetwo">
-      <div class="container">
-        <div class="jumbotron">
-          <h1 align="middle">HERE PUT THE TITLE</h1>
-          <hr>
-          <div align="middle">
-           HERE PUT THE CONTENT
-          </div>
-        </div>
-      </div>
-    </div>
-    END OF THE PART TO COPY AND PAST-->
-
-  </body>
+</body>
 </html>
