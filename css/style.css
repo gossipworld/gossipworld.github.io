@@ -1,50 +1,82 @@
 body, .jumbotron{
-    font-family: 'Playfair Display', serif;
+    font-family: 'Droid Serif', serif;
     font-size: 14px;
     color: #2f2f2f;
     background-color: #f9f7f1;
 }
 header{
+    display: inline-block;
+    text-transform: uppercase;
+
+}
+header div{
+    
+    line-height: 72px;
+    margin-bottom: 20px;
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     font-size: 80px;
-    line-height: 72px;
-    margin-bottom: 20px;
 }
-
 .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f9f7f1;
 }
 
 .sticky + .content {
-  padding-top: 175px;
+    padding-top: 175px;
 }
 .header{
-    background-color: #f9f7f1;
     text-align: center;
     position: relative;
 }
 
+.headerobjectswrapper{
+}
+
 .subhead{
+    text-transform: uppercase;
     border-bottom: 2px solid #2f2f2f;
     border-top: 2px solid #2f2f2f;
     padding: 12px 0 12px 0;
+
+}
+.btn{
+    color: #2f2f2f;
+}
+.subhead a{
+    padding: 0 12px 0 12px
 }
 
-.subhead a{
-	color: #000000;
-	padding: 0 12px 0 12px
+.btn:hover{
+    background-color: #FFFFFF;
 }
 
 .subhead a + a{
-	border-left: 1px solid #2f2f2f;
+    border-left: 1px solid #2f2f2f;
+}
+.weatherforcastbox{
+    position: relative;
+    width: 12%;
+    left: 10px;
+    padding: 10px 15px 10px 15px;
+    line-height: 20px;
+    display: inline-block;
+    margin: 0 50px 0px -360px;
+}
+.subscribe{
+    position: relative;
+    width: 12%;
+    left: 350px;
+    padding: 10px 15px 10px 15px;
+    line-height: 20px;
+    display: inline-block;
+    margin: 0   50px 0px -360px;
 }
 
-.newspaper{
-    display: inline-block;
-    text-transform: uppercase;
+#dateDiv{
+    
 }
 
 .article{
@@ -58,13 +90,18 @@ header{
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
-.article .author{
-    font-weight: 700;
+.article .data{
     font-size: 12px;
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
-.article .author:before{
+
+.article .author{
+    font-weight: 700;
+    padding-right: 10px;
+}
+
+.article .data:before{
     border-top: 1px solid #2f2f2f;
     content: '';
     width: 100px;
@@ -72,7 +109,7 @@ header{
     display: block;
     margin: 0 auto;
 }
-.article .author:after{
+.article .data:after{
     border-bottom: 1px solid #2f2f2f;
     content: '';
     width: 100px;
@@ -116,11 +153,11 @@ header{
 }
 
 .figure {
-	  margin: 0 0 20px;
+    margin: 0 0 20px;
 }
 .figcaption{
-	font-style: italic;
-	font-size: 12px;
+    font-style: italic;
+    font-size: 12px;
 }
 .media {
     width: 100%;
