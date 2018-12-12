@@ -21,6 +21,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
   <script type="text/javascript" src="js/style.js"></script>
+  
+  <script type="text/javascript"> 
+    $(function(){
+      $("#outer_opinion_plot").load("outer_opinion.html"); 
+    }); 
+  </script>
 
 </head>
 <body>
@@ -109,18 +115,32 @@
         </div>
         <div id="exploration"></div>
       </div>
+      
       <div class="jumbotron chapter">
         <div align="middle" class="title" id="exploration">EXPLORATION</div>
         <hr>
         <div align="middle">
-            <iframe class="media" height="600" allowtransparency="true" frameborder="0"scrolling="no" src="https://plot.ly/~christophe.minutolo/10.embed?link=false&modebar=false"></iframe>
+            <iframe class="media" height="600" allowtransparency="true" frameborder="0"scrolling="no" src="https://plot.ly/~christophe.minutolo/14.embed?link=false&modebar=false"></iframe>
             <p class="figcaption">A beautiful map</p>
 
         </div>
         <p>
           90,6% of the coutry have better image of them compared to the think of the other countries.
         </p>
+        <div id="exploration2"></div>
       </div>
+      
+      <div class="jumbotron chapter">
+        <div align="middle" class="title" id="exploration2">EXPLORATION 2</div>
+        <hr>
+        <div align="middle">
+            <div id=outer_opinion_plot></div>
+            <p class="figcaption">A beautiful map</p>
+
+        </div>
+      </div>
+      
+      
     </div>
   </div>
 
