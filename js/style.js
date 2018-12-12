@@ -1,3 +1,15 @@
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
 function showDate()
 {
 	var now = new Date();
@@ -10,15 +22,6 @@ function showDate()
 	}
 
 tnow=new Date();
-/*
-thour=now.getHours();
-tmin=now.getMinutes();
-tsec=now.getSeconds();
-
-if (tmin<=9) { tmin="0"+tmin; }
-if (tsec<=9) { tsec="0"+tsec; }
-if (thour<10) { thour="0"+thour; }
-*/
 
 today = days[now.getDay()] + ", " + date + " " + months[now.getMonth()] + ", " + (fourdigits(now.getYear())); // + " - " + thour + ":" + tmin +":"+ tsec;
 document.getElementById("dateDiv").innerHTML = today;

@@ -1,62 +1,39 @@
-body, .jumbotron{
-    font-family: 'Droid Serif', serif;
-    font-size: 14px;
-    color: #2f2f2f;
-    background-color: #f9f7f1;
+body {
+  font-family: 'Droid Serif', serif;
 }
-header{
-    display: inline-block;
-    text-transform: uppercase;
 
-}
-header div{
-    
-    line-height: 72px;
-    margin-bottom: 20px;
+/* HEADER */
+
+.top-container, .header{
     font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: 80px;
-}
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
+    text-align: center;
+    position: relative;
     background-color: #f9f7f1;
+    color: #2f2f2f;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .sticky + .content {
-    padding-top: 175px;
-}
-.header{
-    text-align: center;
-    position: relative;
+  padding-top: 60px;
 }
 
-.headerobjectswrapper{
-}
-
-.subhead{
-    text-transform: uppercase;
-    border-bottom: 2px solid #2f2f2f;
-    border-top: 2px solid #2f2f2f;
-    padding: 12px 0 12px 0;
-
-}
 .btn{
     color: #2f2f2f;
-}
-.subhead a{
-    padding: 0 12px 0 12px
+    border-radius: 0px;
+    margin-left: -4px;
 }
 
 .btn:hover{
+    color: #2f2f2f;
     background-color: #FFFFFF;
 }
 
-.subhead a + a{
-    border-left: 1px solid #2f2f2f;
-}
-.weatherforcastbox{
+.dateBox{
     position: relative;
     width: 12%;
     left: 10px;
@@ -65,7 +42,24 @@ header div{
     display: inline-block;
     margin: 0 50px 0px -360px;
 }
-.subscribe{
+
+.newspaper{
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.newspaper .title{
+    line-height: 72px;
+    margin-bottom: 20px;
+    font-weight: 900;
+    font-size: 80px;
+}
+
+.newspaper .subtitle{
+    font-size: 15px;
+}
+
+.rssBox{
     position: relative;
     width: 12%;
     left: 350px;
@@ -75,22 +69,65 @@ header div{
     margin: 0   50px 0px -360px;
 }
 
-#dateDiv{
-    
+.subhead{
+    text-transform: uppercase;
+    border-bottom: 2px solid #2f2f2f;
+    border-top: 2px solid #2f2f2f;
+    padding: 12px 0 12px 0;
 }
 
+.subhead a{
+    padding: 0 12px 0 12px
+}
+
+.subhead a + a{
+    border-left: 1px solid #2f2f2f;
+}
+
+/* CONTENT */
+/*.anchor{
+  display: block;
+  height: 105px; /*same height as header*/
+  /*margin-top: -105px; /*same height as header*/
+  /*visibility: hidden;
+}*/
+
+.content, .jumbotron{
+    font-size: 16px;
+    color: #2f2f2f;
+    background-color: #f9f7f1;
+}
+
+p{
+    font-family: 'Helvetica',;
+}
+
+.content a{
+    color: #2f2f2f;
+    text-decoration: underline;
+}
+
+.content .title{
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: capitalize;
+
+}
+
+/* Article header*/
 .article{
     text-align: center;
 }
 
 .article .title{
-    font-weight: 400;
-    font-style: italic;
     font-size: 36px;
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
+
 .article .data{
+    font-variant: small-caps;
     font-size: 12px;
     box-sizing: border-box;
     padding: 10px 0 10px 0;
@@ -109,6 +146,7 @@ header div{
     display: block;
     margin: 0 auto;
 }
+/*
 .article .data:after{
     border-bottom: 1px solid #2f2f2f;
     content: '';
@@ -117,17 +155,27 @@ header div{
     display: block;
     margin: 0 auto;
 }
+*/
 
+/* Chapter header */
 .chapter .title{
-    font-weight: 700;
     font-size: 30px;
-    text-transform: uppercase;
     padding: 10px 0 10px 0;
 
 }
 
+/* Emphasis */
+.sources{
+    font-size: 14px;
+    text-align: left;
+}
+.sources p{
+    margin: 0;
+}
+.sources p + p{
+    padding-left: 20px;
+}
 .citation{
-    font-family: 'Droid Serif', serif;
     text-align: center;
     font-weight: 400;
     display: block;
@@ -153,12 +201,22 @@ header div{
 }
 
 .figure {
-    margin: 0 0 20px;
+    margin: 0 0 20px 0;
 }
+
 .figcaption{
     font-style: italic;
     font-size: 12px;
+    text-align: left;
 }
+
 .media {
     width: 100%;
+    border: 1px solid #2f2f2f;
 }
+
+/*img.media{
+    -webkit-filter: sepia(80%) contrast(1) opacity(0.8);
+    filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8);
+    mix-blend-mode: multiply;
+}*/

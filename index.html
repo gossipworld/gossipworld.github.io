@@ -19,48 +19,43 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-  <script type="text/javascript" src="js/style.js"></script>
   
-  <script type="text/javascript"> 
-    $(function(){
-      $("#outer_opinion_plot").load("outer_opinion.html"); 
-    }); 
-  </script>
+  <script src="http://www.w3schools.com/lib/w3data.js"></script>
 
 </head>
 <body>
-  <div id="introduction"></div>
-  <div class="sticky">
-    <div class="header">
-    <div class="headerobjectswrapper">
-        <div class="weatherforcastbox">
-          <span id="dateDiv"></span>
-        </div>
-        <header>
-        <small>A datastory from applied data analysis - EPFL - Special edition</small>
-        <div>Gossip World<div>
-        </header>
-        <div class="subscribe">
-          <div class="d-block">
+
+  <div class="header">
+    <div class="head">
+      <div class="dateBox">
+        <span id="dateDiv"></span>
+      </div>
+      <header class="newspaper">
+        <div class="subtitle">A datastory from applied data analysis - EPFL - Special edition</div>
+        <div class="title">Gossip World</div>
+      </header>
+      <div class="rssBox">
+        <div class="d-block">
           <a class="btn" href="https://edu.epfl.ch/coursebook/en/applied-data-analysis-CS-401"><i class="fas fa-user-plus"></i></a>
           <a class="btn"href="https://dlab.epfl.ch/teaching/"><i class="fas fa-rss-square"></i></a>
         </div>
-        </div>
+      </div>
     </div>
+  </div>
 
+  <div class="header" id="myHeader">
     <div class="subhead">
         <a class="btn" href="#introduction">Introduction</a>
         <a class="btn" href="#datacleaning">Data cleaning</a>
         <a class="btn" href="#exploration">Exploration</a>
-        </div>
-</div>
-   </div>
+        <a class="btn" href="#conlusion">Conclusion</a>
+      </div>
+  </div>
 
   <div class="content">
     <div class="container">
       <div class="article">
-        <span class="title">What does the world think of us ?</span>
+        <span class="title" class="articleTitle">What does the world think of us ?</span>
         <p class="data">
           <span class="author">by Magali BAUMANN - Nathan GREFFE - Christophe MINUTOLO</span>
           <span class="published">Dec. 16, 2018</span>
@@ -69,60 +64,42 @@
       <figure class="figure">
         <img class="media" src="images/world2.jpg" alt="">
       </figure>
+      <div class="" id="introduction"></div>
       <div class="jumbotron chapter">
-        <div align="middle" class="title" id="introduction">Introduction</div>
+        <div class="title">Introduction</div>
         <hr>
-        <div align="middle" class="text-justify">
+        <div class="text-justify">
           <p>
-            <em>What’s the best thing about Switzerland? -- I don't know, but the flag is a big plus!</em> Joke aside, we want to highlight how one country is seen by other countries of the world. Is it seen positively or negatively ? Is this country even known from the others ? These questions are an example of what we want to answer.
-          </p>
-          <p>
-            To study the feeling of countries towards each other, we use the GDELT Project dataset :
+            <em>What’s the best thing about Switzerland? -- I don't know, but the flag is a big plus!</em> Jokes about other countries are always fun. But they ask an underlying questions to which they do not answer. How is one country perceived by others? In a positive way? Negative? Is it even known in other countries? If jokes cannot answer it in a satisfactory way, a good analysis of the media publications may enlighten. The aim of this project is to  use <a href="https://www.gdeltproject.org/">the GDELT Project</a> dataset to vizualize the feeling of countries towards each other.
           </p>
           <div class="citation">
             "Supported by Google Jigsaw, the GDELT Project monitors the world's broadcast, print, and web news from nearly every corner of every country in over 100 languages and identifies the people, locations, organizations, themes, sources, emotions, counts, quotes, images and events driving our global society every second of every day, creating a free open platform for computing on the entire world."
             <footer class="blockquote-footer">Find more in <cite title="Source Title"><a href="https://www.gdeltproject.org/">GDELT website</a></cite></footer>
           </div>
           <p>
-            More precisely, to answer our questions, we will exploit the tone of reported events to classify countries and display beautifuls graphics about their relations. We follow this plan in this presentation:
+            The GDELT Project provides a (very big) list of events, reported in various articles from different media, from different countries. Among other things, it makes available for each article the name of the country where the event happened, the name of the country which reported it, and the tone of the article. We exploit all this information to build answers to our questions.
           </p>
-          <ol>
-            <li>
-              Data cleaning
-            </li>
-            <li>
-              Choice of the statistics
-            </li>
-            <li>
-              A first beautiful graphic
-            </li>
-            <li>
-              A second one
-            </li>
-            <li>
-              A few more words to conclude
-            </li>
-          </ol>
-          <div id="datacleaning"></div>
+          <p>
+            Going throught this article, we will first dive into the data to highlight the part we are intresting in. Secondly, we will explore it throught a few graphics and analysis. Finally, we will conclude this datastory with a few words. The code used to construct all these parts can be found <a href="https://github.com/NatGr/projectAdA">here</a>.
+          </p>
         </div>
       </div>
+      <div class="" id="datacleaning"></div>
       <div class="jumbotron chapter">
-        <div align="middle" class="title">Data cleaning</div>
+        <div class="title">Data cleaning</div>
         <hr>
-        <div align="middle"  class="text-justify">
+        <div  class="text-justify">
           <!-- YOU CAN INSERT WHATEVER YOU WHANT HERE.-->
           cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet
         </div>
-        <div id="exploration"></div>
       </div>
-      
-      <div class="jumbotron chapter">
-        <div align="middle" class="title" id="exploration">EXPLORATION</div>
-        <hr>
-        <div align="middle">
-            <iframe class="media" height="600" allowtransparency="true" frameborder="0"scrolling="no" src="https://plot.ly/~christophe.minutolo/14.embed?link=false&modebar=false"></iframe>
-            <p class="figcaption">A beautiful map</p>
 
+      <div class="" id="exploration"></div>
+      <div class="jumbotron chapter">
+        <div class="title" id="exploration">Exploration</div>
+        <hr>
+        <div class="">
+          <iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~christophe.minutolo/10.embed?link=false&modebar=false"></iframe>
         </div>
         <p>
           90,6% of the coutry have better image of them compared to the think of the other countries.
@@ -134,15 +111,32 @@
         <div align="middle" class="title" id="exploration2">EXPLORATION 2</div>
         <hr>
         <div align="middle">
-            <div id=outer_opinion_plot></div>
+            <div w3-include-html="plots/outer_opinion.html"></div> 
             <p class="figcaption">A beautiful map</p>
 
         </div>
       </div>
       
       
+      <div class="" id="conlusion"></div>
+      <div class="jumbotron chapter">
+        <div class="title">Conlusion</div>
+        <hr>
+        <div  class="text-justify">
+          <!-- YOU CAN INSERT WHATEVER YOU WHANT HERE.-->
+          cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet
+        </div>
+      </div>
+      <div class="jumbotron sources">
+        <p>Sources: </p>
+        <p>The GDELT project <a href="https://www.gdeltproject.org/">https://www.gdeltproject.org/</a></p>
+        <p>Source code <a href="https://github.com/NatGr/projectAdA">https://github.com/NatGr/projectAdA</a></p>
+        </div>
+      </div>
     </div>
   </div>
 
+  <script type="text/javascript" src="js/style.js"></script>
+  <script>w3IncludeHTML();</script>
 </body>
 </html>
