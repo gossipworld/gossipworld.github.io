@@ -98,11 +98,50 @@
       <div class="jumbotron chapter">
         <div class="title" id="exploration">Exploration</div>
         <hr>
+        <p>
+          In order to better understand our dataset, it’s important to take into account the count of event of each country. In fact we have to be very careful when we will conclude about a phenomenon because a small count of event for a country can lead us down to a wrong path.
+        </p>
+        <hr>
+         <div class="">
+          <iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~christophe.minutolo/24.embed?link=false&modebar=false"></iframe>
+        </div>
+        <hr>
+        <p>
+          We can see that most of the countries have a number of mention between a hundred thousand and one million mentions.
+          For the future results, we have to take care if one the five country that have less than ten thousand mentions are involved.
+        </p>
+        <hr>
+        <div class="">
+          <iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~christophe.minutolo/27.embed?link=false&modebar=false"></iframe>
+        </div>
+        <hr>
+        <p>
+          The choropleth map above shows us that countries in  the African continent and South America tend to have less mentions than other country. In contrast, the United States in the country with the most mention so it would be interessant to analyse the result of this country.
+        </p>
+        <hr>
+        <p>
+          If we take a look at  the USA, we can notice that the average tone for the inner_view is -2.64 and the average tone for the outer view is -2.30. So our analyse will be on negative average tone.
+          What’s more we see that more than 75 % of countries have more than one hundred thousand mentions so we decide to keep only those countries in order to avoid wrong interpretation as we mentioned.
+          <br>
+          We decide to take only the entries that correspond to negative value of average tone and a count_mention greater than one hundred thousand.
+        </p>
+        <figure class="figure">
+          <img class="media" src="images/graph.png" alt="">
+        </figure>
+        <figure class="figure">
+          <img class="media" src="images/graph2.png" alt="">
+        </figure>
+        <br>
+        <p>
+          We observe that there is a country  in the center of the graph with a lot of edges. This country is the United States. This means that for more than one hundred thousand events, a lot of country mentions negatively the USA. 
+        </p>
         <div class="">
           <iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~christophe.minutolo/10.embed?link=false&modebar=false"></iframe>
         </div>
         <p>
-          90,6% of the coutry have better image of them compared to the think of the other countries.
+          <br>
+          The choropleth map above shows the difference between the opinion a country has of itself (according to the media) and the opinion of the rest of the world. A higher difference (blue colour) means that the country has a better opinion of itself than from the rest of the world.
+          90,6% of the country have a better image of them compared to the think of the other countries.
         </p>
         <div id="exploration2"></div>
       </div>
@@ -111,8 +150,7 @@
         <div align="middle" class="title" id="exploration2">EXPLORATION 2</div>
         <hr>
         <div align="middle">
-            <div w3-include-html="plots/outer_opinion.html"></div> 
-            <p class="figcaption">A beautiful map</p>
+            <iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~kamyl/1.embed?link=false&modebar=false&autosize=True"></iframe>
 
         </div>
       </div>
@@ -137,6 +175,5 @@
   </div>
 
   <script type="text/javascript" src="js/style.js"></script>
-  <script>w3IncludeHTML();</script>
 </body>
 </html>
