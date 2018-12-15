@@ -70,17 +70,17 @@
         <hr>
         <div class="text-justify">
           <p>
-            <em>What’s the best thing about Switzerland? -- I don't know, but the flag is a big plus!</em> Jokes about other countries are always fun. But they ask an underlying questions to which they do not answer. How is one country perceived by others? In a positive way? Negative? Is it even known in other countries? If jokes cannot answer it in a satisfactory way, a good analysis of the media publications may enlighten. The aim of this project is to  use <a href="https://www.gdeltproject.org/">the GDELT Project</a> dataset to vizualize the feeling of countries towards each other.
+            <em>What’s the best thing about Switzerland? -- I don't know, but the flag is a big plus!</em> Jokes about other countries are always fun. But they ask an underlying questions to which they do not answer. How is one country perceived by others? In a positive way? Negative? Is it even known in other countries? If jokes cannot answer it in a satisfactory way, a good analysis of the media publications may enlighten. The aim of this project is to use <a href="https://www.gdeltproject.org/" target="_blank">the GDELT</a> dataset to vizualize the feeling of countries towards each other.
           </p>
           <div class="citation">
             "Supported by Google Jigsaw, the GDELT Project monitors the world's broadcast, print, and web news from nearly every corner of every country in over 100 languages and identifies the people, locations, organizations, themes, sources, emotions, counts, quotes, images and events driving our global society every second of every day, creating a free open platform for computing on the entire world."
-            <footer class="blockquote-footer">Find more in <cite title="Source Title"><a href="https://www.gdeltproject.org/">GDELT website</a></cite></footer>
+            <footer class="blockquote-footer">Find more in <cite title="Source Title"><a href="https://www.gdeltproject.org/" target="_blank">GDELT website</a></cite></footer>
           </div>
           <p>
-            The GDELT Project provides a (very big) list of events, reported in various articles from different media, from different countries. Among other things, it makes available for each article the name of the country where the event happened, the name of the country which reported it, and the tone of the article. We exploit all this information to build answers to our questions.
+            The GDELT Project provides a (very big) list of <b>events</b>, each event being <b>mentionned</b> in different articles from different media from different countries. Among other things, it makes available for each article the name of the country that caused the event, the url of the media which reported it, and the tone of the article. We exploit all this information to build answers to our questions.
           </p>
           <p>
-            Going throught this article, we will first dive into the data to highlight the part we are intresting in. Secondly, we will explore it throught a few graphics and analysis. Finally, we will conclude this datastory with a few words. The code used to construct all these parts can be found <a href="https://github.com/NatGr/projectAdA">here</a>.
+            Going throught this article, we will first dive into the data to highlight the part we are intresting in. Secondly, we will explore it throught a few graphics and analysis. Finally, we will conclude this datastory with a few words. The code used to construct all these parts can be found <a href="https://github.com/NatGr/projectAdA" target="_blank">here</a>.
           </p>
         </div>
       </div>
@@ -90,7 +90,15 @@
         <hr>
         <div  class="text-justify">
           <!-- YOU CAN INSERT WHATEVER YOU WHANT HERE.-->
-          cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet
+          <p>
+            Regarding the data cleaning, the main information we used is the tone of the article, that is, if the author talks positively or negatively (number between -100 and 100) about the event. The GDELT database also provides the country that caused the event and the url of the source, <a href="https://blog.gdeltproject.org/multilingual-source-country-crossreferencing-dataset/" target="_blank"> from which we can obtain the name of the country</a>. The type of the actor (ex: Government, Military, Police) is also (but not always) available to refine our analysis. The data we used range from mid-february 2015 to end-november 2017.
+          </p>
+          <p>
+           These informations are then aggregated into several tables: the way a country sees itsef/(its actors), the way the rest of the worlds sees a specific country(s actors), the way a country sees another country (or country's actors) and the way a country is seen by medias of different size (according to the number of mentions parsed by GDLET). Our main metric is the average tone of all the articles in each category.
+          </p>
+          <p>
+            To assess the statistical reliability of these informations, confidence intervals were computed. However, the approximation we used (see notebook for more info) is not valid for a small number of mentions. Thus, we chose not to show confidence intervals when the number of mentions is below 10000 in the following plots (these are otherwise displayed by hovering over a country) and we do not show metrics when the number of mentions is below 2000 (white areas on the maps). This is rather conservative but missing information was preferred over displaying misleading data.
+          </p>
         </div>
       </div>
 
@@ -112,7 +120,7 @@
         </p>
         <hr>
         <div class="">
-          <iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~christophe.minutolo/27.embed"></iframe>
+          <iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="plots/count_mentions.html"></iframe>
         </div>
         <hr>
         <p>
@@ -133,6 +141,91 @@
           We observe that there is a country  in the center of the graph with a lot of edges. This country is the United States. This means that for more than one hundred thousand events, a lot of country mentions negatively the USA.
           We can see that 111 countries talk about USA negatively with more than one hundred thousand mentions , that is huge.
         </p>
+        
+        
+        <div  class="text-justify"> <!-- TODO: integrate to the rest-->
+          <p>
+            <br>
+            Another important point to stress out is that the GDELT database is itself biased in the news it contains. Taking the example of Belgium: <br>
+          </p>
+          <div class="container-fluid">
+          <div class="row">
+            
+            <div class="col">
+              <p>
+                <br>
+                We can see that the biggest websites in belgium are mostly european news, this is not that surprising in itself that Belgium got attributed the european websites and that these are more important than belgian news (altough 9000 mentions is quite small, <a href="https://www.swissinfo.ch/" target="_blank">swissinfo.ch</a> got 330,000 for example). The concern here is that, at the exception of <a href="http://www.deredactie.be" target="_blank">deredactie.be</a>, belgian mainstream news websites (<a href="http://www.demorgen.be" target="_blank">demorgen.be</a>, <a href="http://www.rtbf.be" target="_blank">rtbf.be</a> and <a href="http://www.lalibre.be" target="_blank">lalibre.be</a>) have very few number of mentions. 
+                <br>
+                The same pattern can be observed in France with <a href="http://www.france24.com" target="_blank">france24.com</a> having 340,000 mentions and <a href="http://www.lemonde.fr" target="_blank">lemonde.fr</a> only having 182 or in Germany with <a href="https://www.thelocal.de/" target="_blank">thelocal.de</a> having 37,000 and <a href="http://http://www.spiegel.de/" target="_blank">spiegel.de</a> having 8000. 
+              </p>
+              
+              <p>
+                What we can observe here, is that websites that are available in english (all of the medias mentionned here with more than 1000 references except for <a href="http://http://www.spiegel.de/" target="_blank">spiegel.de</a>) have much much more mentions that websites in other (widly spread) languages. This introduces a huge bias towards internationnal websites and is quite unfortunate. It also explains why there are so much mentions of the United States and allows for another interpretation of the small versus big media analysis, the interpretation of native versus english speaker websites.
+                
+              </p>
+            </div>
+            
+            <div class="col">
+              <table class="table">
+                <thead class=thead-dark>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Source Name</th>
+                    <th scope="col">number of mentions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td><a href="http://www.paneuropeannetworks.com" target="_blank">paneuropeannetworks.com</a></td>
+                    <td>9368</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td><a href="http://www.brusselstimes.com" target="_blank">brusselstimes.com</a></td>
+                    <td>6328</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td><a href="http://www.deredactie.be" target="_blank">deredactie.be</a></td>
+                    <td>5480</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td><a href="http://www.ec.europa.eu" target="_blank">ec.europa.eu</a></td>
+                    <td>4695</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td><a href="http://www.investineu.com" target="_blank">investineu.com</a></td>
+                    <td>3164</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">...</th>
+                    <td>...</td>
+                    <td>...</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">19</th>
+                    <td><a href="http://www.demorgen.be" target="_blank">demorgen.be</a></td>
+                    <td>65</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">28</th>
+                    <td><a href="http://www.rtbf.be" target="_blank">rtbf.be</a></td>
+                    <td>19</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">31</th>
+                    <td><a href="http://www.lalibre.be" target="_blank">lalibre.be</a></td>
+                    <td>16</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          </div>
+        </div>
       </div>
       
       <div class="" id="Rankings"></div>
@@ -145,7 +238,13 @@
           </div>
           <!-- YOU CAN INSERT WHATEVER YOU WHANT HERE.-->
           <div  class="text-justify">
-            cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet
+          <p>
+            The obvious way to assess how good a country is perceived by others is to compute the mean opinion on the rest of the world over that country. This is what the previous map shows, we can see that Canada, Sweden and the Baltic countries are doing quite well but that is also the case for the US, China and most southern african countries. On the other hand, Europe is not that well seen and central Africa is very often critizised. <br>
+            An improvement over this criterion would be to weigh less countries with bad reputation (e.g. we should not consider that Somalia dislikes Canada to assess the popularity of Canada) but this nearly doesn't change the scores, so we can conclude that the previous mentionned example doesn't occur often.
+          </p>
+          <p>
+            We can conclude from the previous that it is still possible to been seen in a god way abroad even for poor countries (Namibia, Botsanawa, Ghana) and that Asian Countries are doing quite well.
+          </p>
           </div>
         </div>
       </div>
@@ -161,16 +260,34 @@
           </div>
           <!-- YOU CAN INSERT WHATEVER YOU WHANT HERE.-->
           <div  class="text-justify">
-            The choropleth map above shows the difference between the opinion a country has of itself (according to the media) and the opinion of the rest of the world. A higher difference (blue colour) means that the country has a better opinion of itself than from the rest of the world. We can see the confidence interval for this value for each country.
-            90% of the country have a better image of them compared to the think of the other countries and only 19 countries have a better reputation from outside than inside.
+          <p>
+            Another interesting indicator to look at is difference between how a country percieves itself and what the rest of the world thinks. We can see that, withtout surprise, the huge majority of countries have a positively biased opinion of themselves. That bias is most important in Asia, Africa, South America and Eastern Europe than in Western Europe and North America.
+          </p>
+          <p>
+            This might be correlated with freedom of press, to check that hypothesys, we computed the correlation between the difference in opinions and the <a href="https://rsf.org/en/ranking/2016#" target="_blank">Reporters without borders 2016 World Press Freedom Index</a>. Unfortunately, the experiment showed inconclusive which makes sense due to the complexity of evaluation of RWB Index.
+          </p>
           </div>
         </div>
+      </div>
+      
+      
+      <div class="" id="clustering"></div>
+      <div class="jumbotron chapter">
+        <div class="title">Clustering the different countries</div>
+        <hr>
+        <p>
+          Another interesting idea is to try to compute <a href="https://en.wikipedia.org/wiki/Cluster_analysis" target="_blank">clusters</a>. To compute these, we only used the 40 biggest countries. We can regroup countries in two ways, either by the way they are perceived by the outer world (clustering by popularity) or by the way they perceive the rest of the world (clustering by opinion). We computed both in the following, we also computed the clusters for each actor types. However, the obtained dendograms do not show any particularly interesting information and are thus omitted of this page, you can see them <a href="clusters.html" target="_blank">here</a>
+        </p>
       </div>
       
       
       <div class="" id="types"></div>
       <div class="jumbotron chapter">
         <div class="title">Influence of actor types</div>
+        <p>
+          An interesting data that GDELT gives us about the actor of an event is its type, a lot of different types are used but the most common are: Police, Education, Government, Judiciary, Legislature, Media, Big Corporations and Military. <br>
+          We can refine our analysis based on these types and we get the following map for the opinion of the rest of the world on a given country. An important remark is that GDELT doesn't always specifies the type of the actor so using this field reduces the number of available data (thus the increased number of white countries).
+        </p>
         <hr>
         <div  class="text-justify">
           <div align="middle">
@@ -178,7 +295,9 @@
           </div>
           <!-- YOU CAN INSERT WHATEVER YOU WHANT HERE.-->
           <div  class="text-justify">
-            cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet
+            <p>
+              First of all, analysing the global trends shows us that Big Corporations and Education are quite popular wheras Media, Military, Judiciary and Police are not at all. We can see that government popularity follows the same trend as the global popularity. We can see that Military are especially inpopular in Central Africa, the Middle East, Ukraine and Venezuela which makes sense due to the rebellions and military conflicts in these zones.
+            </p>
           </div>
         </div>
       </div>
@@ -187,17 +306,29 @@
       <div class="" id="medias"></div>
       <div class="jumbotron chapter">
         <div class="title">What about the size of the media that reports a news?</div>
+        <p>
+          For the following analysis, medias were separated into 3 different size groups (others were tested as well but 3 shows the more insight). These groups were computed by ordering the media by importance and grouping them so as to have groups with roughly the same number of mentions. This was done separately for each country, so that each country has medias in all of the categories. <br> In case one of the groups was below the treshold to show him on the map, we hid the other groups of the same country as well for coherence. 
+        </p>
         <hr>
         <div  class="text-justify">
           <div align="middle">
             <iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="plots/media_inner.html"></iframe>
           </div>
+          <div  class="text-justify">
+            <br>
+            The previous map shows the opinion of the media of a country about itself for different sizes of medias. As explained before, smaller should also be interpreted as non-english speaking media here. We can see that depending on the country, the size of the media has a more or less important influence on the average opinion. We can nevertheless note that the variation is usually quite important. For most country, small medias have a better national opinion whereas big and medium countries have a worse opinion.
+            <br>
+            <br>
+            <br>
+            <br>
+          </div>
+          
           <div align="middle">
             <iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="plots/media_outer.html"></iframe>
           </div>
           <!-- YOU CAN INSERT WHATEVER YOU WHANT HERE.-->
           <div  class="text-justify">
-            cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet
+            Here, we can see the opinion on a country of small/medium/big medias of the other countries. There is not much difference between medium and big medias, however, small medias have a much better opinion of the outer world than medium or big ones. TODO: tester si c'est du simpson
           </div>
         </div>
       </div>
@@ -216,8 +347,8 @@
       
       <div class="jumbotron sources">
         <p>Sources: </p>
-        <p>The GDELT project <a href="https://www.gdeltproject.org/">https://www.gdeltproject.org/</a></p>
-        <p>Source code <a href="https://github.com/NatGr/projectAdA">https://github.com/NatGr/projectAdA</a></p>
+        <p>The GDELT project <a href="https://www.gdeltproject.org/" target="_blank">https://www.gdeltproject.org/</a></p>
+        <p>Source code <a href="https://github.com/NatGr/projectAdA" target="_blank">https://github.com/NatGr/projectAdA</a></p>
         </div>
       </div>
     </div>
