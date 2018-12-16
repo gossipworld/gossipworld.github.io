@@ -191,6 +191,7 @@
 					<p>
 						Now that we have identified the strengths and limits of our dataset, we can start extracting the information. Our leading question is: what does the world think of us ? The first subquestion we can ask is: does the world <em>even</em> think of us ?
 					</p>
+					<hr>
 					<div class="part" id="Mentions">
 						<div class="title">Counting the mentions</div>
 						<p>
@@ -198,21 +199,20 @@
 						</p>
 						<iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="plots/count_mentions.html"></iframe>
 					</div>
-					<hr>
-					<!-- <p>
-						Looking more closely at the case of articles whose target country is the USA, we can note that the average tone of the US media is -2.64, and that of the non-USA media is -2.30. Is it really significant, or is it a marginal phenomenon highlighted by our choice of visualization? To answer that, we are going to analyse the negative average tone articles. Furthermore, as we saw above that more than 75 % of countries have more than one hundred thousand mentions so we decide to keep only those countries in order to avoid wrong interpretation as we mentioned.
-						<br>
-						In summary, we take only the entries that correspond to negative value of average tone and a number of mentions greater than one hundred thousand.
-					</p>
-					<figure >
-						<img  class="media" height="450" src="images/graph_USA.svg" alt="">
-						<p class="figcaption">Network of states negatively speaking about an other</p>
-					</figure>
 					<p>
-						We observe that there is a country in the center of the graph with a lot of edges. This country is the United States. This means that for more than one hundred thousand events, a lot of country mentions negatively the USA. 
-					</p>
+			            This map gives a good idea about the importance of a country but we cannot use it to asses how much a country A mentions a country B. The whole country to country network is way too big to be represented (tens of thousands of edges), however, we can represent the biggest edges, this is done in the following. These two graphs show the 40 biggest (in terms of number of mentions) mentions by medias from country A about events provoked by country B. The color represents the average opinion (red means dissaproval and blue approbation, altough there is no blue here). The size of the edge is an indication of the number of mentions.
+			          </p>
+			          <img width="70%" class="centered" src="plots/network_US.svg">
+			          <br>
+			          <p>
+			            For the first graph, we can see that the United States are a very important news producer for the GDLET dataset. There are only a few links in the 40 most important edges that do not come from the US. We can also see that these links come from countries in conflict to eachother. For example: Israel to the West Bank (aka Palestine) and India to Pakistan. We can also see that all of the mentions are negative.
+			          </p>
+			          <img width="70%" class="centered" src="plots/network_no_US.svg">
+			          <br>
+			          <p>
+			            Once we removed all mentions about/coming from the US, we can see a much more diverse graph. We can still see the links that were on the previous graph between Isreal and the West Bank and India and Pakistan except that they are now much more visible. We can also see that countries like Syria, Afganhistan, Turkey and at smaller scale Russia are subject to a lot of criticism which correlates with our experience as news consumers. 
+			          </p>
 					<hr>
-        -->
 					<div class="part" id="Rankings">
 						<div class="title">Ranking between each countries</div>
 						<p>
@@ -253,7 +253,7 @@
 					<div class="part" id="clustering">
 						<div class="title">Clustering the different countries</div>
 						<p>
-							Another interesting idea is to try to compute <a href="https://en.wikipedia.org/wiki/Cluster_analysis" target="_blank">clusters</a>. To compute these, we only used the 40 biggest countries. We can regroup countries in two ways, either by the way they are perceived by the outer world (clustering by popularity) or by the way they perceive the rest of the world (clustering by opinion). We computed both in the following, we also computed the clusters for each actor types. However, the obtained dendograms do not show any particularly interesting information. They are thus grouped in the following slidershow. As explained, Each category in "All Actors", "Government", "Media", "Police", "Big Corporations", "Judiciary", "Military", "Education", "Celebrities" is covered by two dendograms, the first by opinion and the second by popularity.
+							Another interesting idea is to try to compute <a href="https://en.wikipedia.org/wiki/Cluster_analysis" target="_blank">clusters</a>. To compute these, we only used the 40 biggest countries. We can regroup countries in two ways, either by the way they are perceived by the outer world (clustering by popularity) or by the way they perceive the rest of the world (clustering by opinion). We computed both in the following, we also computed the clusters for each actor types. However, the obtained dendrograms do not show any particularly interesting information. They are thus grouped in the following slidershow. As explained, Each category in "All Actors", "Government", "Media", "Police", "Big Corporations", "Judiciary", "Military", "Education", "Celebrities" is covered by two dendrograms, the first by opinion and the second by popularity.
 						</p>
 						<div id="carousel-thumb" class="media carousel slide carousel-fade" data-ride="carousel">
 						    <!--Slides-->
@@ -262,109 +262,109 @@
 						        	<div class="carousel-caption">
 						        		All Actors
 						        	</div>
-						        	<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on all actor types.svg">
+						        	<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by opinion on all actor types.svg">
 						        </div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										All Actors
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on all actor types.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by popularity on all actor types.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Government
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Government.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by opinion on Government.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Government
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Government.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by popularity on Government.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Media
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Media.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by opinion on Media.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Media
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Media.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by popularity on Media.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Police
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Police.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by opinion on Police.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Police
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Police.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by popularity on Police.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Big Corporations
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Big Corporations.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by opinion on Big Corporations.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Big Corporations
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Big Corporations.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by popularity on Big Corporations.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Judiciary
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Judiciary.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by opinion on Judiciary.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Judiciary
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Judiciary.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by popularity on Judiciary.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Military
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Military.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by opinion on Military.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Military
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Military.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by popularity on Military.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Education
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Education.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by opinion on Education.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Education
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Education.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by popularity on Education.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Celebrities
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Celebrities.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by opinion on Celebrities.svg">
 								</div>
 								<div class="carousel-item">
 									<div class="carousel-caption">
 										Celebrities
 									</div>
-									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Celebrities.svg">
+									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by popularity on Celebrities.svg">
 								</div>
 						    </div>
 						    <!--/.Slides-->
@@ -391,14 +391,14 @@
 						<p>
 							The previous map shows the opinion of the media of a country about itself for different sizes of medias. As explained before, smaller should also be interpreted as non-english speaking media here. We can see that depending on the country, the size of the media has a more or less important influence on the average opinion. We can nevertheless note that the variation is usually quite important. For most country, small medias have a better national opinion whereas big and medium countries have a worse opinion.
 						</p>
-						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="plots/media_outer.html"></iframe>            
+						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="plots/media_outer.html"></iframe>
 			            <p>
 			              Here, we can see the opinion on a country of small/medium/big medias of the other countries. There is not much difference between medium and big medias, however, small medias have a much better opinion of the outer world than medium or big ones. An explanation for that phenomenon would be that small media report more news about popular types of actors (multinationals, education) and less about unpopular types of actor (military, police). 
 			            </p>
 			            <p>
 			              By analysing the types individually, we can see that the trend applies for all of them. Small media thus really have a better opinion of the outer world. Additionnally, the proportion of mentions for each actor type nearly doesn't change.
 			            </p>
-			            <img width="100%" src="plots/outer_opinion_by_type.svg">
+			              <img width="70%" class="centered" src="plots/outer_opinion_by_type.svg">
 					</div>
 				</div>
 			</div>
