@@ -91,7 +91,7 @@
 						Regarding the data, the main information we used is the tone of the article. It consists of an already computed number quantifying the tone employed by the author to tell about the targeted country, from the most positive (100) to the most negative (-100) tone. The GDELT database also provides the country that caused the event and the url of the source, <a href="https://blog.gdeltproject.org/multilingual-source-country-crossreferencing-dataset/" target="_blank"> from which we can obtain the name of the country</a>. The type of the actor (ex: Government, Military, Police) is also but not always available to refine our analysis. The data we used range from mid-february 2015 to end-november 2017.
 					</p>
 					<p>
-						These informations are then aggregated into several tables: the way a country sees itsef or its actors, the way the rest of the worlds sees a specific country or its actors, the way a country sees another country or its actors and the way a country is seen by medias of different size, according to the number of mentions parsed by GDLET. Our main metric is the average tone of all the articles in each category.
+						These informations are then aggregated into several tables: the way a country sees itsef as a whole or by actor type, the way the rest of the worlds sees a specific country as a whole or by actor type, the way a country sees another country as a whole or by actor type and the way a country is seen by medias of different size, according to the number of mentions parsed by GDLET. Our main metric is the average tone of all the articles in each category.
 					</p>
 					<hr>
 					<p>
@@ -175,7 +175,7 @@
 								To assess the statistical reliability of these informations, confidence intervals were computed. However, the approximation we used (see the <a href="https://github.com/NatGr/projectAdA" target="_blank">notebook</a> for more details) is not valid for a small number of mentions. Thus, we chose not to show confidence intervals when the number of mentions is below 10000 in the following plots, but these are otherwise displayed by hovering over a country. In the same vein, we do not show metrics when the number of mentions is below 2000 which results in white areas on the maps. This is rather conservative but missing information was preferred over displaying misleading data.
 							</p>
 							<p>
-								In the graph, we can see that most of the countries have more than a hundred thousand mentions and only a part of 6% have less than ten thousand mentions. For the future results, we will be careful if countries from this last part are involved.
+								In the graph, we can see that most of the countries have more than a hundred thousand mentions and only a part of 6% have less than ten thousand mentions. The number of countries with less than 10,000 mentions is quite small, however, that proportion rapidly grows when we refine our analysis (only taking national news into account, refining on type, media size).
 							</p>
 						</div>
 						<div class="col">
@@ -196,22 +196,22 @@
 					<div class="part" id="Mentions">
 						<div class="title">Counting the mentions</div>
 						<p>
-							The following choropleth map allow us to see firtsly the number of articles mentionning a country ("about"), and secondly the number of articles written in a country mentionning a country ("from"). On the first hand, it shows us that countries from the African continent and South America tend to write less articles than other countries. In contrast, the United States is the country in which are written the most articles by a large margin. On the other hand, selecting the other view shows us that all countries are covered by the articles written. By deduction, we can say that events that happen in African and South American countries are much more covered by other countries than by themselves.
+							The following choropleth map allow us to see firtsly the number of articles mentionning a country ("about"), and secondly the number of articles written in a country ("from"). On the first hand, it shows us that countries from the African continent and South America tend to write less articles than other countries. In contrast, the United States is the country in which are written the most articles by a large margin. On the other hand, selecting the other view shows us that all countries are covered by the articles written. By deduction, we can say that events that happen in African and South American countries are much more covered by other countries than by themselves.
 						</p>
 						<iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="plots/count_mentions.html"></iframe>
 					</div>
 					<p>
-			            This map gives a good idea about the importance of a country but we cannot use it to asses how much a country A mentions a country B. The whole country to country network is way too big to be represented (tens of thousands of edges), however, we can represent the biggest edges, this is done in the following. These two graphs show the 40 biggest (in terms of number of mentions) mentions by medias from country A about events provoked by country B. The color represents the average opinion (red means dissaproval and blue approbation, altough there is no blue here). The size of the edge is an indication of the number of mentions.
+			            This map gives a good idea about the importance of a country but we cannot use it to asses how much a country A mentions a country B. The whole country to country network is way too big to be represented (tens of thousands of edges), however, we can represent the biggest edges, this is done in the following. These two graphs show the 40 biggest (in terms of number of mentions) articles by medias from country A about events provoked by country B. The color represents the average opinion (red means dissaproval and blue approbation, altough there is no blue here). The size of the edge is an indication of the number of mentions.
 			          </p>
 			          <img width="70%" class="centered" src="plots/network_US.svg">
 			          <br>
 			          <p>
-			            For the first graph, we can see that the United States are a very important news producer for the GDLET dataset. There are only a few links in the 40 most important edges that do not come from the US. We can also see that these links come from countries in conflict to eachother. For example: Israel to the West Bank (aka Palestine) and India to Pakistan. We can also see that all of the mentions are negative.
+			            For the first graph, we can see that the United States are a very important news producer for the GDLET dataset. There are only a few links in the 40 most important edges that do not come from the US. We can also see that the most important link is headed towards Russia. We can also see that these links come from countries in conflict to eachother. For example: Israel to the West Bank (aka Palestine) and India to Pakistan. We can also see that all of the mentions are negative.
 			          </p>
 			          <img width="70%" class="centered" src="plots/network_no_US.svg">
 			          <br>
 			          <p>
-			            Once we removed all mentions about/coming from the US, we can see a much more diverse graph. We can still see the links that were on the previous graph between Isreal and the West Bank and India and Pakistan except that they are now much more visible. We can also see that countries like Syria, Afganhistan, Turkey and at smaller scale Russia are subject to a lot of criticism which correlates with our experience as news consumers. 
+			            Once we removed all mentions about/coming from the US, we can see a much more diverse graph. We can still see the links that were on the previous network between Isreal and the West Bank and India and Pakistan except that they are now much more visible. We can also see that countries like Syria, Afganhistan, Turkey and at smaller scale Russia are subject to a lot of criticism which correlates with our experience as news consumers. 
 			          </p>
 					<hr>
 					<div class="part" id="Rankings">
@@ -235,7 +235,7 @@
 						</p>
 						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~christophe.minutolo/10.embed?link=false&modebar=false"></iframe>
 						<p>
-							This might be correlated with freedom of press, to check that hypothesys, we computed the correlation between the difference in opinions and the <a href="https://rsf.org/en/ranking/2016#" target="_blank">Reporters without borders 2016 World Press Freedom Index</a>. Unfortunately, the experiment showed inconclusive which makes sense due to the complexity of evaluation of RWB Index.
+							This might be correlated with freedom of press, to check that hypothesys, we computed the correlation (as well as visualizing the relation) between the difference in opinions and the <a href="https://rsf.org/en/ranking/2016#" target="_blank">Reporters without borders 2016 World Press Freedom Index</a>. Unfortunately, the experiment showed inconclusive which makes sense due to the complexity of evaluation of RWB Index.
 						</p>
 					</div>
 					<hr>
@@ -243,11 +243,11 @@
 						<div class="title">Influence of actor types</div>
 						<p>
 							An interesting data that GDELT gives us about the actor of an event is its type, a lot of different types are used but the most common are: Government, Media, Police, Big Corporations, Judiciary, Military, Education and Celebrities. <br>
-							We can refine our analysis based on these types and we get the following map for the opinion of the rest of the world on a given country. An important remark is that GDELT doesn't always specifies the type of the actor so using this field reduces the number of available data (thus the increased number of white countries).
+							We can refine our analysis based on these types and we get the following map for the opinion of the rest of the world on a given country. An important remark is that GDELT doesn't always (80% of the time) specifies the type of the actor so using this field reduces the number of available data (thus the increased number of white countries).
 						</p>
 						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="plots/outer_opinion_by_type.html"></iframe>
 						<p>
-							First of all, analysing the global trends shows us that Big Corporations and Education are quite popular wheras Media, Military, Judiciary and Police are not at all. We can see that government popularity as well as media and Celebrities follows the same trend as the global popularity. We can see that Military are especially inpopular in Central Africa, the Middle East, Ukraine and Venezuela which makes sense due to the rebellions and military conflicts in these zones.
+							First of all, analysing the global trends shows us that Big Corporations and Education are quite popular wheras Media, Military, Judiciary and Police are not at all. We can see that government popularity as well as media and Celebrities follows the same trend as the global popularity. Military are also especially inpopular in Central Africa, the Middle East, Ukraine and Venezuela which makes sense due to the rebellions and military conflicts in these zones.
 						</p>
 					</div>
 					<hr>
@@ -386,11 +386,11 @@
 					<div class="part" id="medias">
 						<div class="title">What about the size of the media that reports a news?</div>
 						<p>
-							For the following analysis, medias were separated into 3 different size groups (others were tested as well but 3 shows the more insight). These groups were computed by ordering the media by importance and grouping them so as to have groups with roughly the same number of mentions. This was done separately for each country, so that each country has medias in all of the categories. <br> In case one of the groups was below the treshold to show him on the map, we hid the other groups of the same country as well for coherence. 
+							For the following analysis, medias were separated into 3 different size groups (other numbers were tested as well but 3 shows the more insight). These groups were computed by ordering the media by importance and grouping them so as to have groups with roughly the same number of mentions. This was done separately for each country, so that each country has medias in all of the categories. <br> In case one of the groups was below the treshold to show him on the map, we hid the other groups of the same country as well for coherence. 
 						</p>
 						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="plots/media_inner.html"></iframe>
 						<p>
-							The previous map shows the opinion of the media of a country about itself for different sizes of medias. As explained before, smaller should also be interpreted as non-english speaking media here. We can see that depending on the country, the size of the media has a more or less important influence on the average opinion. We can nevertheless note that the variation is usually quite important. For most country, small medias have a better national opinion whereas big and medium countries have a worse opinion.
+							The previous map shows the opinion of the media of a country about itself for different sizes of medias. As explained before, smaller should also be interpreted as non-english speaking media here. We can see that depending on the country, the size of the media has a more or less important influence on the average opinion. We can nevertheless note that the variation is usually quite important. For most countries, small medias have a better national opinion whereas big and medium countries have a worse opinion.
 						</p>
 						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="plots/media_outer.html"></iframe>
 			            <p>
