@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	<title>GOSSIP WORLD</title>
+	<title>What does the world think of us?</title>
 
 
 	<!-- Bootstrap CSS -->
@@ -29,7 +29,7 @@
 			</div>
 			<header class="newspaper">
 				<div class="subtitle">A datastory from applied data analysis - EPFL - Special edition</div>
-				<div class="title">Gossip World</div>
+				<div class="title">ADA Columns</div>
 			</header>
 			<div class="rssBox">
 				<div class="d-block">
@@ -58,9 +58,7 @@
 					<span class="published">Dec. 16, 2018</span>
 				</p>
 			</div>
-			<figure class="figure">
-				<img class="media" src="images/world2.jpg" alt="">
-			</figure>
+			<img class="media" src="images/world2.jpg" alt="">
 			<div class="" id="introduction"></div>
 			<div class="jumbotron chapter">
 				<div class="title">Introduction</div>
@@ -94,13 +92,14 @@
 					</p>
 					<hr>
 					<p>
-						Another important point to stress out is that the GDELT database is itself biased in the news it contains. Taking the example of Belgium: <br>
+						Another important point to stress out is that the GDELT database is itself biased in the news it contains. Taking the example of Belgium:
 					</p>
 					<div class="row">
 						<div class="col">
 							<p>
 								We can see that the biggest websites in belgium are mostly european news, this is not that surprising in itself that Belgium got attributed the european websites and that these are more important than belgian news (altough 9000 mentions is quite small, <a href="https://www.swissinfo.ch/" target="_blank">swissinfo.ch</a> got 330,000 for example). The concern here is that, at the exception of <a href="http://www.deredactie.be" target="_blank">deredactie.be</a>, belgian mainstream news websites (<a href="http://www.demorgen.be" target="_blank">demorgen.be</a>, <a href="http://www.rtbf.be" target="_blank">rtbf.be</a> and <a href="http://www.lalibre.be" target="_blank">lalibre.be</a>) have very few number of mentions. 
-								<br>
+							</p>
+							<p>
 								The same pattern can be observed in France with <a href="http://www.france24.com" target="_blank">france24.com</a> having 340,000 mentions and <a href="http://www.lemonde.fr" target="_blank">lemonde.fr</a> only having 182 or in Germany with <a href="https://www.thelocal.de/" target="_blank">thelocal.de</a> having 37,000 and <a href="http://http://www.spiegel.de/" target="_blank">spiegel.de</a> having 8000. 
 							</p>
 							<p>
@@ -169,7 +168,6 @@
 					<hr>
 					<div class="row">
 						<div class="col">
-							<br>
 							<p>
 								To assess the statistical reliability of these informations, confidence intervals were computed. However, the approximation we used (see the <a href="https://github.com/NatGr/projectAdA" target="_blank">notebook</a> for more details) is not valid for a small number of mentions. Thus, we chose not to show confidence intervals when the number of mentions is below 10000 in the following plots, but these are otherwise displayed by hovering over a country. In the same vein, we do not show metrics when the number of mentions is below 2000 which results in white areas on the maps. This is rather conservative but missing information was preferred over displaying misleading data.
 							</p>
@@ -202,13 +200,11 @@
 					<p>
 			            This map gives a good idea about the importance of a country but we cannot use it to asses how much a country A mentions a country B. The whole country to country network is way too big to be represented (tens of thousands of edges), however, we can represent the biggest edges, this is done in the following. These two graphs show the 40 biggest (in terms of number of mentions) articles by medias from country A about events provoked by country B. The color represents the average opinion (red means dissaproval and blue approbation, altough there is no blue here). The size of the edge is an indication of the number of mentions.
 			          </p>
-			          <img width="70%" class="centered" src="plots/network_US.svg">
-			          <br>
+			          <img class="picture" src="plots/network_US.svg">
 			          <p>
 			            For the first graph, we can see that the United States are a very important news producer for the GDLET dataset. There are only a few links in the 40 most important edges that do not come from the US. We can also see that the most important link is headed towards Russia. We can also see that these links come from countries in conflict to eachother. For example: Israel to the West Bank (aka Palestine) and India to Pakistan. We can also see that all of the mentions are negative.
 			          </p>
-			          <img width="70%" class="centered" src="plots/network_no_US.svg">
-			          <br>
+			          <img class="picture" src="plots/network_no_US.svg">
 			          <p>
 			            Once we removed all mentions about/coming from the US, we can see a much more diverse graph. We can still see the links that were on the previous network between Isreal and the West Bank and India and Pakistan except that they are now much more visible. We can also see that countries like Syria, Afganhistan, Turkey and at smaller scale Russia are subject to a lot of criticism which correlates with our experience as news consumers. 
 			          </p>
@@ -241,7 +237,9 @@
 					<div class="part" id="types">
 						<div class="title">Influence of actor types</div>
 						<p>
-							An interesting data that GDELT gives us about the actor of an event is its type, a lot of different types are used but the most common are: Government, Media, Police, Big Corporations, Judiciary, Military, Education and Celebrities. <br>
+							An interesting data that GDELT gives us about the actor of an event is its type, a lot of different types are used but the most common are: Government, Media, Police, Big Corporations, Judiciary, Military, Education and Celebrities.
+						</p>
+						<p>
 							We can refine our analysis based on these types and we get the following map for the opinion of the rest of the world on a given country. An important remark is that GDELT doesn't always (80% of the time) specifies the type of the actor so using this field reduces the number of available data (thus the increased number of white countries).
 						</p>
 						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="plots/outer_opinion_by_type.html"></iframe>
@@ -380,7 +378,10 @@
 					<div class="part" id="medias">
 						<div class="title">What about the size of the media that reports a news?</div>
 						<p>
-							For the following analysis, medias were separated into 3 different size groups (other numbers were tested as well but 3 shows the more insight). These groups were computed by ordering the media by importance and grouping them so as to have groups with roughly the same number of mentions. The importance is mesured by counting the number of articles published by a media. This was done separately for each country, so that each country has medias in all of the categories. <br> In case one of the groups was below the treshold to show him on the map, we hid the other groups of the same country as well for coherence. 
+							For the following analysis, medias were separated into 3 different size groups (other numbers were tested as well but 3 shows the more insight). These groups were computed by ordering the media by importance and grouping them so as to have groups with roughly the same number of mentions. The importance is mesured by counting the number of articles published by a media. This was done separately for each country, so that each country has medias in all of the categories.
+						</p>
+						<p>
+							In case one of the groups was below the treshold to show him on the map, we hid the other groups of the same country as well for coherence. 
 						</p>
 						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="plots/media_inner.html"></iframe>
 						<p>
@@ -393,7 +394,7 @@
 			            <p>
 			              By analysing the types individually, we can see that the trend applies for all of them. Additionnally, the proportion of mentions for each actor type nearly doesn't change.
 			            </p>
-			              <img width="70%" class="centered" src="plots/outer_opinion_by_type.svg">
+			              <img class="picture" src="plots/outer_opinion_by_type.svg">
                     <br>
                   <p>
                     Another confusion factor could be that small news are more likely to talk about friendly countries than big news, again, this was explored and we also concluded that this doesn't change the results. We can thus say that small media really have a better opinion of the outer world.
