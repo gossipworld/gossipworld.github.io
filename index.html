@@ -255,7 +255,7 @@
 						<p>
 							Another interesting idea is to try to compute <a href="https://en.wikipedia.org/wiki/Cluster_analysis" target="_blank">clusters</a>. To compute these, we only used the 40 biggest countries. We can regroup countries in two ways, either by the way they are perceived by the outer world (clustering by popularity) or by the way they perceive the rest of the world (clustering by opinion). We computed both in the following, we also computed the clusters for each actor types. However, the obtained dendrograms do not show any particularly interesting information. They are thus grouped in the following slidershow. As explained, Each category in "All Actors", "Government", "Media", "Police", "Big Corporations", "Judiciary", "Military", "Education", "Celebrities" is covered by two dendrograms, the first by opinion and the second by popularity.
 						</p>
-						<div id="carousel-thumb" class="media carousel slide carousel-fade" data-ride="carousel">
+						<div id="carousel-thumb" class="media carousel slide carousel-fade" data-ride="carousel" data-interval="false">
 						    <!--Slides-->
 						    <div class="carousel-inner">
 						        <div class="carousel-item active">
@@ -407,7 +407,21 @@
 				<div class="title">Conlusion</div>
 				<hr>
 				<div  class="text-justify">
-					cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet
+					<p>
+						So we now have some elements to answer our big question: what does the world think of us? First of all, wherever we come from, the world is talking about us. And sometimes even more than ourselves, coming from countries of Africa or South America! On the other hand, that is not that <em>everyone</em> is talking about eachother but much more USA (bad) talking about everyone. Without counting USA, that is intresting to notice that the countries talks a lot about both thier neightboor or about the countries with the one they have historical relation (colonies, wars...). 
+					</p>
+					<p>
+						Talking about that the USA is bad talking about everyone, the analysis shows that, if the tone is graded from -100 to 100, the scores raised are much more between -6 and 2. Globally, the tone employed is negative but it stays close to neutral, as when it is positive. Each country see itself between -4 and 4, and the majority is above the neutral tone. The bad new is, except for a few rare countries, the opinion of external countries on a country is generally negative, and much more negative than how the country see itself. I mean, if generaly the media from a country report an event with a neutral-good tone, it seems that other report it with neutral-bad tone. That's sad, yes.
+					</p>
+					<p>
+						To balance that finding, the analyse of the subject, althought it is partial due to lack of data, show that it has a big correlation with the tone of the article. To take the two extreme, we can see that articles which reports news about police are written with a very bad tone, close to -7 for everyone. In the other hand, articles about big corporations are written with a (relatively) very good tone between -1 and 1 (above 100, let's remember it). If you want to improve the average tone of the articles written about your country, remember to promotes the well-being of such corporations. For other subject, like governments, military and celebrities the panorama is much more contrasted, due to geopolitics. 
+					</p>
+					<p>
+						Now, let's remind who is talking! We saw in the data part that the most important media for each country are not always well represented in the dataset, due to language issue for example. That might be a good explanation why there are (relatively) very few article from center africans countries. But for those who are referenced, our analysis show that the less there are articles referenced from a media, the better is the tone employed to discribe events abroad. The national situation depends a lot of the country, and seems to be correlated to the geopolitics.  
+					</p>
+					<p>
+						To conclude, the english langage world think of us in a neutral-bad tone, with bit less good than ourself. But wherever you come from, know that media reportes events about your country. Your country is known! 
+					</p>
 				</div>
 			</div>
 			<div class="jumbotron sources">
