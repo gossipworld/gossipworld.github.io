@@ -14,7 +14,6 @@
 
 	<link rel="stylesheet" href="css/style.css">
 
-	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -257,7 +256,6 @@
 							Another interesting idea is to try to compute <a href="https://en.wikipedia.org/wiki/Cluster_analysis" target="_blank">clusters</a>. To compute these, we only used the 40 biggest countries. We can regroup countries in two ways, either by the way they are perceived by the outer world (clustering by popularity) or by the way they perceive the rest of the world (clustering by opinion). We computed both in the following, we also computed the clusters for each actor types. However, the obtained dendrograms do not show any particularly interesting information. They are thus grouped in the following slidershow. As explained, Each category in "All Actors", "Government", "Media", "Police", "Big Corporations", "Judiciary", "Military", "Education", "Celebrities" is covered by two dendrograms, the first by opinion and the second by popularity.
 						</p>
 						<div id="carousel-thumb" class="media carousel slide carousel-fade" data-ride="carousel" data-interval="false">
-						    <!--Slides-->
 						    <div class="carousel-inner">
 						        <div class="carousel-item active">
 						        	<div class="carousel-caption">
@@ -368,8 +366,6 @@
 									<img class="d-block w-100" src="plots/Dendrogram of the biggest countries by popularity on Celebrities.svg">
 								</div>
 						    </div>
-						    <!--/.Slides-->
-						    <!--Controls-->
 						    <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
 						        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						        <span class="sr-only">Previous</span>
@@ -378,15 +374,13 @@
 						        <span class="carousel-control-next-icon" aria-hidden="true"></span>
 						        <span class="sr-only">Next</span>
 						    </a>
-						    <!--/.Controls-->
 						</div>
-						<!--/.Carousel Wrapper-->
 					</div>
 					<hr>
 					<div class="part" id="medias">
 						<div class="title">What about the size of the media that reports a news?</div>
 						<p>
-							For the following analysis, medias were separated into 3 different size groups (other numbers were tested as well but 3 shows the more insight). These groups were computed by ordering the media by importance and grouping them so as to have groups with roughly the same number of mentions. This was done separately for each country, so that each country has medias in all of the categories. <br> In case one of the groups was below the treshold to show him on the map, we hid the other groups of the same country as well for coherence. 
+							For the following analysis, medias were separated into 3 different size groups (other numbers were tested as well but 3 shows the more insight). These groups were computed by ordering the media by importance and grouping them so as to have groups with roughly the same number of mentions. The importance is mesured by counting the number of articles published by a media. This was done separately for each country, so that each country has medias in all of the categories. <br> In case one of the groups was below the treshold to show him on the map, we hid the other groups of the same country as well for coherence. 
 						</p>
 						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="plots/media_inner.html"></iframe>
 						<p>
