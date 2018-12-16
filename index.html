@@ -189,9 +189,15 @@
 				<hr>
 				<div  class="text-justify">
 					<p>
-						The following choropleth map shows us that countries from the African continent and South America tend to have less mentions than other country. In contrast, the United States is the country with the most mentions by a large margin.
+						Now that we have identified the strengths and limits of our dataset, we can start extracting the information. Our leading question is: what does the world think of us ? The first subquestion we can ask is: does the world <em>even</em> think of us ?
 					</p>
-					<iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="plots/count_mentions.html"></iframe>
+					<div class="part" id="Mentions">
+						<div class="title">Counting the mentions</div>
+						<p>
+							The following choropleth map allow us to see firtsly the number of articles mentionning a country ("about"), and secondly the number of articles written in a country mentionning a country ("from"). On the first hand, it shows us that countries from the African continent and South America tend to write less articles than other countries. In contrast, the United States is the country in which are written the most articles by a large margin. On the other hand, selecting the other view shows us that all countries are covered by the articles written. By deduction, we can say that events that happen in African and South American countries are much more covered by other countries than by themselves.
+						</p>
+						<iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="plots/count_mentions.html"></iframe>
+					</div>
 					<hr>
 					<!-- <p>
 						Looking more closely at the case of articles whose target country is the USA, we can note that the average tone of the US media is -2.64, and that of the non-USA media is -2.30. Is it really significant, or is it a marginal phenomenon highlighted by our choice of visualization? To answer that, we are going to analyse the negative average tone articles. Furthermore, as we saw above that more than 75 % of countries have more than one hundred thousand mentions so we decide to keep only those countries in order to avoid wrong interpretation as we mentioned.
@@ -209,33 +215,26 @@
         -->
 					<div class="part" id="Rankings">
 						<div class="title">Ranking between each countries</div>
+						<p>
+							We can now get to the heart of the matter, and use the average tone of the articles. The obvious way to assess how good a country is perceived by others is to compute the mean opinion on the rest of the world over that country. This is what the following map shows. We can see that Canada, Sweden and the Baltic countries are doing quite well but that is also the case for the US, China and most southern african countries. On the other hand, Europe is not that well seen and central Africa is very often critizised.
+						</p>
 						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~christophe.minutolo/12.embed?link=false&modebar=false"></iframe>
-						<div  class="text-justify">
-							<p>
-								The obvious way to assess how good a country is perceived by others is to compute the mean opinion on the rest of the world over that country. This is what the previous map shows, we can see that Canada, Sweden and the Baltic countries are doing quite well but that is also the case for the US, China and most southern african countries. On the other hand, Europe is not that well seen and central Africa is very often critizised. <br>
-								An improvement over this criterion would be to weigh less countries with bad reputation (e.g. we should not consider that Somalia dislikes Canada to assess the popularity of Canada) but this nearly doesn't change the scores, so we can conclude that the previous mentionned example doesn't occur often.
-							</p>
-							<p>
-								We can conclude from the previous that it is still possible to been seen in a god way abroad even for poor countries (Namibia, Botsanawa, Ghana) and that Asian Countries are doing quite well.
-							</p>
-						</div>
+						<p>
+							An improvement over this criterion would be to weigh less countries with bad reputation (e.g. we should not consider that Somalia dislikes Canada to assess the popularity of Canada) but this nearly doesn't change the scores, so we can conclude that the previous mentionned example doesn't occur often.
+						</p>
+						<p>
+							We can conclude from the previous that it is still possible to been seen in a god way abroad even for poor countries (Namibia, Botsanawa, Ghana) and that Asian Countries are doing quite well.
+						</p>
 					</div>
 					<hr>
 					<div class="part" id="self-perception">
 						<div class="title">Country overestimation of itself</div>
-						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~christophe.minutolo/10.embed?link=false&modebar=false"></iframe>
 						<p>
 							Another interesting indicator to look at is difference between how a country percieves itself and what the rest of the world thinks. We can see that, withtout surprise, the huge majority of countries have a positively biased opinion of themselves. That bias is most important in Asia, Africa, South America and Eastern Europe than in Western Europe and North America.
 						</p>
+						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~christophe.minutolo/10.embed?link=false&modebar=false"></iframe>
 						<p>
 							This might be correlated with freedom of press, to check that hypothesys, we computed the correlation between the difference in opinions and the <a href="https://rsf.org/en/ranking/2016#" target="_blank">Reporters without borders 2016 World Press Freedom Index</a>. Unfortunately, the experiment showed inconclusive which makes sense due to the complexity of evaluation of RWB Index.
-						</p>
-					</div>
-					<hr>
-					<div class="part" id="clustering">
-						<div class="title">Clustering the different countries</div>
-						<p>
-							Another interesting idea is to try to compute <a href="https://en.wikipedia.org/wiki/Cluster_analysis" target="_blank">clusters</a>. To compute these, we only used the 40 biggest countries. We can regroup countries in two ways, either by the way they are perceived by the outer world (clustering by popularity) or by the way they perceive the rest of the world (clustering by opinion). We computed both in the following, we also computed the clusters for each actor types. However, the obtained dendograms do not show any particularly interesting information and are thus omitted of this page, you can see them <a href="clusters.html" target="_blank">here</a>
 						</p>
 					</div>
 					<hr>
@@ -251,6 +250,138 @@
 						</p>
 					</div>
 					<hr>
+					<div class="part" id="clustering">
+						<div class="title">Clustering the different countries</div>
+						<p>
+							Another interesting idea is to try to compute <a href="https://en.wikipedia.org/wiki/Cluster_analysis" target="_blank">clusters</a>. To compute these, we only used the 40 biggest countries. We can regroup countries in two ways, either by the way they are perceived by the outer world (clustering by popularity) or by the way they perceive the rest of the world (clustering by opinion). We computed both in the following, we also computed the clusters for each actor types. However, the obtained dendograms do not show any particularly interesting information. They are thus grouped in the following slidershow. As explained, Each category in "All Actors", "Government", "Media", "Police", "Big Corporations", "Judiciary", "Military", "Education", "Celebrities" is covered by two dendograms, the first by opinion and the second by popularity.
+						</p>
+						<div id="carousel-thumb" class="media carousel slide carousel-fade" data-ride="carousel">
+						    <!--Slides-->
+						    <div class="carousel-inner">
+						        <div class="carousel-item active">
+						        	<div class="carousel-caption">
+						        		All Actors
+						        	</div>
+						        	<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on all actor types.svg">
+						        </div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										All Actors
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on all actor types.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Government
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Government.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Government
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Government.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Media
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Media.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Media
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Media.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Police
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Police.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Police
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Police.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Big Corporations
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Big Corporations.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Big Corporations
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Big Corporations.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Judiciary
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Judiciary.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Judiciary
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Judiciary.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Military
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Military.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Military
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Military.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Education
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Education.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Education
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Education.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Celebrities
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by opinion on Celebrities.svg">
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-caption">
+										Celebrities
+									</div>
+									<img class="d-block w-100" src="plots/Dendogram of the biggest countries by popularity on Celebrities.svg">
+								</div>
+						    </div>
+						    <!--/.Slides-->
+						    <!--Controls-->
+						    <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+						        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						        <span class="sr-only">Previous</span>
+						    </a>
+						    <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+						        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						        <span class="sr-only">Next</span>
+						    </a>
+						    <!--/.Controls-->
+						</div>
+						<!--/.Carousel Wrapper-->
+					</div>
+					<hr>
 					<div class="part" id="medias">
 						<div class="title">What about the size of the media that reports a news?</div>
 						<p>
@@ -261,13 +392,13 @@
 							The previous map shows the opinion of the media of a country about itself for different sizes of medias. As explained before, smaller should also be interpreted as non-english speaking media here. We can see that depending on the country, the size of the media has a more or less important influence on the average opinion. We can nevertheless note that the variation is usually quite important. For most country, small medias have a better national opinion whereas big and medium countries have a worse opinion.
 						</p>
 						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="plots/media_outer.html"></iframe>            
-            <p>
-              Here, we can see the opinion on a country of small/medium/big medias of the other countries. There is not much difference between medium and big medias, however, small medias have a much better opinion of the outer world than medium or big ones. An explanation for that phenomenon would be that small media report more news about popular types of actors (multinationals, education) and less about unpopular types of actor (military, police). 
-            </p>
-            <p>
-              By analysing the types individually, we can see that the trend applies for all of them. Small media thus really have a better opinion of the outer world. Additionnally, the proportion of mentions for each actor type nearly doesn't change.
-            </p>
-            <img width="100%" src="plots/outer_opinion_by_type.svg">
+			            <p>
+			              Here, we can see the opinion on a country of small/medium/big medias of the other countries. There is not much difference between medium and big medias, however, small medias have a much better opinion of the outer world than medium or big ones. An explanation for that phenomenon would be that small media report more news about popular types of actors (multinationals, education) and less about unpopular types of actor (military, police). 
+			            </p>
+			            <p>
+			              By analysing the types individually, we can see that the trend applies for all of them. Small media thus really have a better opinion of the outer world. Additionnally, the proportion of mentions for each actor type nearly doesn't change.
+			            </p>
+			            <img width="100%" src="plots/outer_opinion_by_type.svg">
 					</div>
 				</div>
 			</div>
