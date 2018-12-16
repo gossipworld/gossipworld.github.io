@@ -174,11 +174,11 @@
 								To assess the statistical reliability of these informations, confidence intervals were computed. However, the approximation we used (see the <a href="https://github.com/NatGr/projectAdA" target="_blank">notebook</a> for more details) is not valid for a small number of mentions. Thus, we chose not to show confidence intervals when the number of mentions is below 10000 in the following plots, but these are otherwise displayed by hovering over a country. In the same vein, we do not show metrics when the number of mentions is below 2000 which results in white areas on the maps. This is rather conservative but missing information was preferred over displaying misleading data.
 							</p>
 							<p>
-								In the graph, we can see that most of the countries have more than a hundred thousand mentions and only a part of less than 3% have less than ten thousand mentions. For the future results, we will be careful if countries from this last part are involved.
+								In the graph, we can see that most of the countries have more than a hundred thousand mentions and only a part of 6% have less than ten thousand mentions. For the future results, we will be careful if countries from this last part are involved.
 							</p>
 						</div>
 						<div class="col">
-							<iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="plots/count_percentage.html"></iframe>
+							<iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~christophe.minutolo/24.embed?link=false&modebar=false"></iframe>
 						</div>
 					</div>
 				</div>
@@ -189,11 +189,11 @@
 				<hr>
 				<div  class="text-justify">
 					<p>
-						The following choropleth map shows us that countries from the African continent and South America tend to have less mentions than other country. In contrast, the United States is the country with the most mentions so it would be interessant to analyse the result of this country.
+						The following choropleth map shows us that countries from the African continent and South America tend to have less mentions than other country. In contrast, the United States is the country with the most mentions by a large margin.
 					</p>
 					<iframe class="media" height="600" allowtransparency="true" frameborder="0" scrolling="no" src="plots/count_mentions.html"></iframe>
 					<hr>
-					<p>
+					<!-- <p>
 						Looking more closely at the case of articles whose target country is the USA, we can note that the average tone of the US media is -2.64, and that of the non-USA media is -2.30. Is it really significant, or is it a marginal phenomenon highlighted by our choice of visualization? To answer that, we are going to analyse the negative average tone articles. Furthermore, as we saw above that more than 75 % of countries have more than one hundred thousand mentions so we decide to keep only those countries in order to avoid wrong interpretation as we mentioned.
 						<br>
 						In summary, we take only the entries that correspond to negative value of average tone and a number of mentions greater than one hundred thousand.
@@ -206,6 +206,7 @@
 						We observe that there is a country in the center of the graph with a lot of edges. This country is the United States. This means that for more than one hundred thousand events, a lot of country mentions negatively the USA. Actually, 111 countries talk about USA negatively with more than one hundred thousand mentions, which is huge.
 					</p>
 					<hr>
+        -->
 					<div class="part" id="Rankings">
 						<div class="title">Ranking between each countries</div>
 						<iframe class="media" height="600"  allowtransparency="true" frameborder="0" scrolling="no" src="https://plot.ly/~christophe.minutolo/12.embed?link=false&modebar=false"></iframe>
