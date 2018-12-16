@@ -167,7 +167,7 @@ p{
 /* Chapter header */
 .part .title{
     font-style: normal;
-    font-size: 24px;
+    font-size: 22px;
     text-align: left;
 }
 
@@ -220,7 +220,8 @@ p{
 
 .media {
     width: 100%;
-    border: 1px solid #2f2f2f;
+    margin-bottom: 10px;
+    background-color: #e0ded8;
 }
 
 img.centered {
@@ -228,13 +229,20 @@ img.centered {
     margin-left: auto;
     margin-right: auto
 }
-img {
-    border: 1px solid #2f2f2f;
 
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+    color: #2f2f2f;
 }
 
-/*img.media{
-    -webkit-filter: sepia(80%) contrast(1) opacity(0.8);
-    filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8);
-    mix-blend-mode: multiply;
-}*/
+.carousel-item img{
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.carousel {
+    border: none;
+    height: 600px;
+}
